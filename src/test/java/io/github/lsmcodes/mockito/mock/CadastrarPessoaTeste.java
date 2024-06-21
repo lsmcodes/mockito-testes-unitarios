@@ -16,7 +16,7 @@ import org.mockito.junit.jupiter.MockitoExtension;
 public class CadastrarPessoaTeste {
 
         @Mock
-        private CorreiosAPI mockCorreiosAPI;
+        private CorreiosAPI correiosAPI;
 
         @InjectMocks
         private CadastrarPessoa cadastrarPessoa;
@@ -25,7 +25,7 @@ public class CadastrarPessoaTeste {
         void cadastrarPessoa_DeveCadastrarPessoaCorretamente_QuandoReceberDadosDeCadastro() {
                 // Arrange
                 Localizacao localizacao = new Localizacao("BA", "Salvador", "Rua 10 de Junho", "Rua", "Bonfim");
-                Mockito.when(this.mockCorreiosAPI.encontrarLocalizacaoPeloCEP("40415-185")).thenReturn(localizacao);
+                Mockito.when(this.correiosAPI.encontrarLocalizacaoPeloCEP("40415-185")).thenReturn(localizacao);
 
                 Pessoa pessoa = new Pessoa("Carla", "34.795.744-4", LocalDate.of(1999, 07, 21));
                 pessoa.setLocalizacao(localizacao);
