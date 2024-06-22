@@ -1,4 +1,4 @@
-package io.github.lsmcodes.mockito.mock;
+package io.github.lsmcodes.mockito.mock.pessoa;
 
 /**
  * Classe que representa a integração com a API dos correios

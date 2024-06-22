@@ -1,4 +1,4 @@
-package io.github.lsmcodes.mockito.mock;
+package io.github.lsmcodes.mockito.mock.pessoa;
 
 import java.time.LocalDate;
 

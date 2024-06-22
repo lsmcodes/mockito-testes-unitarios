@@ -1,10 +1,5 @@
 package io.github.lsmcodes.mockito.captor;
 
-import io.github.lsmcodes.mockito.mock.CadastrarPessoa;
-import io.github.lsmcodes.mockito.mock.CorreiosAPI;
-import io.github.lsmcodes.mockito.mock.Pessoa;
-
-import java.time.LocalDate;
 import java.util.Scanner;
 
 public class EnviarEmail {
