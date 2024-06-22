@@ -1,9 +1,12 @@
 package io.github.lsmcodes.mockito.spy.conta;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.*;
 import org.mockito.junit.jupiter.MockitoExtension;
+
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 @ExtendWith(MockitoExtension.class)
 public class ContaTeste {
@@ -38,6 +41,15 @@ public class ContaTeste {
 
                 // Assert
                 Mockito.verify(conta, Mockito.times(vezesInvocado)).validarSaldo(ArgumentMatchers.anyDouble());
+        }
+
+        @Test
+        void validarSaldo_NaoDeveLancarExcecao_QuandoReceberValorAPagarInvalido() {
+                // Arrange
+                Mockito.doNothing().when(conta).validarSaldo(ArgumentMatchers.anyDouble());
+
+                //Assert
+                assertDoesNotThrow(() ->  conta.validarSaldo(3000));
         }
 
 }

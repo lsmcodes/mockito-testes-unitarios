@@ -1,12 +1,12 @@
 package io.github.lsmcodes.mockito.mock;
 
-import static org.junit.jupiter.api.Assertions.assertAll;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-
 import java.time.LocalDate;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.anyString;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -39,6 +39,16 @@ public class CadastrarPessoaTeste {
                                 () -> assertEquals(pessoa.getDocumento(), pessoaCadastrada.getDocumento()),
                                 () -> assertEquals(pessoa.getNascimento(), pessoaCadastrada.getNascimento()),
                                 () -> assertEquals(pessoa.getLocalizacao(), pessoaCadastrada.getLocalizacao()));
+        }
+
+        @Test
+        void encontrarLocalizacaoPeloCEP_DeveLancarRuntimeException_QuandoReceberQualquerCEP() {
+                // Arrange
+                Mockito.when(this.correiosAPI.encontrarLocalizacaoPeloCEP(anyString())).thenThrow(RuntimeException.class);
+
+                // Assert
+                assertThrows(RuntimeException.class, () -> this.cadastrarPessoa.cadastrarPessoa("Lucas", "10.855.455-7",
+                        LocalDate.of(2003, 02, 03), "29158-207"));
         }
 
 }
