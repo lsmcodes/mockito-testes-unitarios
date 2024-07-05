@@ -1,9 +1,5 @@
 package io.github.lsmcodes.mockito.spy.conta;
 
-import io.github.lsmcodes.mockito.spy.mensagem.EnviarMensagens;
-import io.github.lsmcodes.mockito.spy.mensagem.Mensagem;
-
-import java.util.List;
 import java.util.Scanner;
 
 /**
