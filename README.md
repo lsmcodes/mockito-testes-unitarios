@@ -26,7 +26,7 @@
 `Mockito` é o framework mais popular para testes com `mocks` e `spies` em aplicações Java.
 
 ## Exercícios
-Este repositório contém exercícios que exemplificas a utilização do Mockito e que cobrem os seguintes temas:
+Este repositório contém exercícios que exemplificam a utilização do Mockito e que cobrem os seguintes temas:
 - Mocks
 - Spies
 - Capturando argumentos com Captor
